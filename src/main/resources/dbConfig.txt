@@ -1,0 +1,19 @@
+
+Mysql
+CREATE USER 'springuser'@'localhost' IDENTIFIED BY 'Spr1ng.y4n3l1k32018';
+CREATE database demoDB;
+GRANT ALL PRIVILEGES ON demoDB.* TO 'springuser'@'localhost';
+FLUSH PRIVILEGES;
+
+Mongo
+$ mongo
+> use demoDB
+> db.createUser(
+  {
+    user: "mongoSpring",
+    pwd: "mongoSpring",
+    roles: [
+       { role: "readWrite", db: "demoDB" }
+    ]
+  }
+)
